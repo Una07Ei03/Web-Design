@@ -1,18 +1,32 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {
+  --primary-color: #2b12be;
+  --accent-color: yellowgreen;
+  --text-main: #333;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
 
 header {
   display: flex;             
   align-items: center;       
   justify-content: space-between;
-  padding: 20px 40px;
-  position: absolute;
+  padding: 15px 40px;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-  box-sizing: border-box
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-sizing: border-box;
 }
 
 header .logo-title {
@@ -24,6 +38,7 @@ header .logo-title {
 header .logo-title img {
   height: 60px;
   width: auto;
+  border-radius: 8px;
 }
 
 header h1 {
@@ -32,7 +47,7 @@ header h1 {
   font-weight: 700;
   font-size: 42px;
   letter-spacing: 0.1px;
-
+  margin: 10;
   background: linear-gradient(90deg, #2b12be, #bab9b9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

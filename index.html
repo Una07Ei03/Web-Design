@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ClinkNote</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="./images/Logo.jpeg">
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -13,28 +14,35 @@
 
     <header>
         <div class="logo-title">
-            <img src="./imagine/Logo.jpeg" alt="ClinkNote Logo">
+            <img src="./images/Logo.jpeg" alt="ClinkNote Logo">
             <h1 class="logo-title">ClinkNote</h1>
         </div>
             <nav>
                 <ul class="menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="services.html">Services</a></li>
+                    <li><a href="security.html">Security & Privacy</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
     </header>
 
-    <img src="./imagine/Cover.jepg.jpg" alt="Hero Image" class="hero-image">
+    <img src="./images/Cover.jepg.jpg" alt="Hero Image" class="hero-image">
 
     <video class="hero-video" autoplay muted loop playsinline>
-        <source src="./imagine/Personal EMR Software.mp4" type="video/mp4">
+        <source src="./images/Personal EMR Software.mp4" type="video/mp4">
     </video>
       
     <div class="hero-content">
         <h2>Portable Electronic Medical Records</h2>
         <p>Access and manage your medical records anytime, anywhere with ClinkNote.</p>
+    </div>
+
+    <div class="upload-container">
+        <button id="uploadBtn" class="cta-button">Upload Medical Report</button>
+        <input type="file" id="fileInput" hidden accept=".pdf, .jpg, .jpeg, .png">
+        <p class="security-note">SECURE: AES-256 Encrypted | 21 CFR Part 11 Compliant</p>
     </div>
 
     </section>
