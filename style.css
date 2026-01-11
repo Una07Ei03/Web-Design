@@ -19,14 +19,27 @@ header {
   align-items: center;       
   justify-content: space-between;
   padding: 15px 40px;
-  position: fixed;
+  position:fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(244, 241, 241, 0.1);
   box-sizing: border-box;
+  backdrop-filter: blur(10px);
+}
+
+header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 60px;
+  right: 60px;
+  height: 3.5px;
+  background-color: rgba(7, 2, 37, 0.939);
+  display: block;
+  z-index: 1001;
+  border-radius: 15px;
 }
 
 header .logo-title {
@@ -47,7 +60,7 @@ header h1 {
   font-weight: 700;
   font-size: 42px;
   letter-spacing: 0.1px;
-  margin: 10;
+  padding-right: 5px;
   background: linear-gradient(90deg, #2b12be, #bab9b9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -90,15 +103,18 @@ nav ul.menu li a:hover::after {
 }
 
 .hero {
+    margin-top: 0;
+    padding-top: 90px;
     position: relative;
     width: 100%;
     height: 100vh;
-    overflow: hidden;  
+    overflow: hidden;
+    box-sizing: border-box;  
 }
 
-.hero-bg {
+.hero-image {
   position: absolute;
-  top: 0;
+  top: 10;
   left: 0;
   width: 100%;
   height: 100%;
@@ -108,22 +124,25 @@ nav ul.menu li a:hover::after {
 
 .hero-video {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 200px;
-  height: auto;
+  bottom: 40px;
+  right: 86px;
+  width: 46%;
+  height: 50%;
+  object-fit: cover;
   z-index: 1;
-  pointer-events: none;
+  border-top-left-radius: 5px;
+  overflow: hidden;
+  pointer-events: auto;
 }
 
 .hero-content {
-  position: relative;
+  position: absolute;
   z-index: 2;
-  top: 50%;
-    transform: translateY(-50%);
+  top: 40%;
+  left: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding-left: 60px;
-  color: white;
+  color: rgb(97, 95, 95);
 }
