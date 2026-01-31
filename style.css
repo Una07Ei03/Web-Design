@@ -261,3 +261,31 @@ footer a {
         overflow-x: auto; /* Ensures table is responsive */
     }
 }
+
+/* Services Page Specific Styles */
+.service-page {
+  padding-top: 100px;
+}
+
+.service-hero {
+  text-align: center;
+  padding: 60px 10%;
+  background-color: var(--bg-light);
+}
+
+.service-hero h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.pricing {
+  overflow-x: auto;
+  padding: 40px 10%;
+}
+
+.pricing table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
