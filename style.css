@@ -6,20 +6,25 @@
   --primary-color: #2b12be;
   --accent-color: yellowgreen;
   --text-main: #333;
+  --bg-light: #f4f1f1;
 }
 
+/* Base Styles */
 body, html {
   margin: 0;
   padding: 0;
   font-family: 'Inter', sans-serif;
+  color: var(--text-main);
+  line-height: 1.6;
 }
 
+/* Header & Navigation - Consistent Banner Area [cite: 20, 21] */
 header {
   display: flex;             
   align-items: center;       
   justify-content: space-between;
   padding: 15px 40px;
-  position:fixed;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -45,7 +50,7 @@ header::after {
 header .logo-title {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 } 
 
 header .logo-title img {
@@ -58,16 +63,13 @@ header h1 {
   font-family: "montserrat", sans-serif;
   font-style: italic;
   font-weight: 700;
-  font-size: 42px;
+  font-size: 40px;
   letter-spacing: 0.1px;
-  padding-right: 5px;
+  margin: 0;
   background: linear-gradient(90deg, #2b12be, #bab9b9);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-nav {
-    flex-shrink: 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 nav ul.menu {
@@ -85,6 +87,8 @@ nav ul.menu li a {
   font-weight: 600;
   padding: 5px 0;
   white-space: nowrap;
+  /* Bonus Feature: CSS Transition  */
+  transition: color 0.3s ease;
 }
 
 nav ul.menu li a::after {
@@ -94,7 +98,7 @@ nav ul.menu li a::after {
   left: 0;
   width: 0;
   height: 3px;
-  background-color: yellowgreen;
+  background-color: var(--accent-color);
   transition: width 0.3s ease-in-out;
 }
 
@@ -102,74 +106,158 @@ nav ul.menu li a:hover::after {
   width: 100%;
 }
 
+/* Main Content Area [cite: 27] */
+main {
+  display: block;
+  width: 100%;
+}
+
+/* Hero Section */
 .hero {
-    margin-top: 0;
-    padding-top: 90px;
     position: relative;
     width: 100%;
-    min-height: 100vh;
-    overflow: hidden;
-    box-sizing: border-box;
+    height: 80vh;
+    min-height: 500px;
     display: flex;
     align-items: center;
-    justify-content: center;  
+    justify-content: center;
+    padding-top: 90px;
+    box-sizing: border-box;
+    background-image: url('./images/Cover3.png');
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 .hero-image {
   position: absolute;
-  top: 90px;
+  top: 0;
   left: 0;
   width: 100%;
-  height: calc(100%-90px);
+  height: 100%;
   object-fit: cover;
-  z-index: -1;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 10;
-  width: 90%;
-  max-width: 1200px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px; 
-  padding: 20px;
-}
-
-.hero-text-area {
-  flex: 1;
-  color: #333;
-}
-
-.hero-video-wrapper {
-  flex: 1;
-  display: relative;
-  max-width: 5000px;
-  z-index: 11;
+  z-index: 0;
+  display: block;
 }
 
 .hero-video {
   position: absolute;
-  bottom: 7%;
-  right: 3%;
-  width: 35vw;
-  height: 30vw;
-  object-fit: cover;
-  z-index: 1;
-  border-top-left-radius: 10px;
-  overflow: hidden;
-  pointer-events: auto;
+  bottom: 5%;
+  right: 5%;
+  width: 30vw;
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  z-index: 2;
 }
+
+.upload-container {
+    z-index: 10;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+}
+
+/* Generic Section Styling */
+section {
+    padding: 80px 10%;
+    background: white;
+}
+
+/* Features Section */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    background-color: #f9f9f9;
+}
+
+/* Table Styling - Required Feature  */
+.pricing table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+.pricing th, .pricing td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.pricing th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Footer Area [cite: 45] */
+footer {
+    background: #070225;
+    color: white;
+    padding: 40px 10%;
+    text-align: center;
+}
+
+footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+/* Responsive Design - Multiple Form Factors [cite: 29, 63] */
 @media (max-width: 768px) {
-    .hero-content {
+    header {
         flex-direction: column;
-        text-align: center;
-        padding-top: 20px;
+        padding: 10px;
     }
     
-    .hero-text-area, .hero-video-wrapper {
-        width: 100%;
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav ul.menu {
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .hero {
+      min-height: 60vh;
+      padding-top: 120px;
+    }
+
+    .hero-image {
+        object-position: center center;
+        height: 100%;
+    }
+
+    .hero-video {
+        position: relative;
+        width: 80%;
+        bottom: 0;
+        right: 0;
+        margin-top: 20px;
+    }
+
+    .pricing table {
+        display: block;
+        overflow-x: auto; /* Ensures table is responsive */
     }
 }

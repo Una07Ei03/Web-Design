@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ClinkNote - Secure EMR and medical note management system. Protecting your privacy and intellectual property with AES-256 encryption.">
+  <meta name="keywords" content="ClinkNote, EMR, Medical Records, Encryption, Patent Protection, Secure Notes, Healthcare IT">
   <title>ClinkNote</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="./images/Logo.jpeg">
@@ -26,20 +28,69 @@
             </nav>
     </header>
 
-    <section class="hero">
+    <main>
+        <section class="hero">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="./images/Personal EMR Software.mp4" type="video/mp4">
+            </video>
+            
+            <div class="upload-container">
+                <button id="uploadBtn" class="cta-button">Upload Medical Report</button>
+                <input type="file" id="fileInput" hidden accept=".pdf, .jpg, .jpeg, .png">
+                <p class="security-note">SECURE: AES-256 Encrypted | 21 CFR Part 11 Compliant</p>
+            </div>
+        </section>
 
-    <img src="./images/Cover-2.png" alt="Hero Image" class="hero-image">
-    <video class="hero-video" autoplay muted loop playsinline>
-        <source src="./images/Personal EMR Software.mp4" type="video/mp4">
-    </video>
-    
-    <div class="upload-container">
-        <button id="uploadBtn" class="cta-button">Upload Medical Report</button>
-        <input type="file" id="fileInput" hidden accept=".pdf, .jpg, .jpeg, .png">
-        <p class="security-note">SECURE: AES-256 Encrypted | 21 CFR Part 11 Compliant</p>
-    </div>
 
-    </section>
+        <section class="features">
+            <h2>Our Core Technologies</h2>
+            <div class="feature-item">
+                <h3>Secure Encryption</h3>
+                <p>Your medical notes are stored with AES-256 encryption, ensuring maximum security and privacy.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Patent Protected</h3>
+                <p>Our innovative technology is protected under patent law, ensuring your data's integrity.</p>
+            </div>
+        </section>
+
+        <section class="pricing">
+            <h2>Service Plans</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Free Tier</th>
+                        <th>Pro (Patent Protected)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Storage</td>
+                        <td>5GB</td>
+                        <td>Unlimited</td>
+                    </tr>
+                    <tr>
+                        <td>AES-256 Encryption</td>
+                        <td>Yes</td>
+                        <td>Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="resources">
+            <h2>Global Standards</h2>
+            <p>Learn more about security at <a href="https://www.iso.org" target="_blank">ISO Official Website</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 ClinkNote Inc. All Rights Reserved.</p>
+            <p>Contact Support: <a href="mailto:contact@clinknote.com">contact@clinknote.com</a></p>
+        </div>
+    </footer>
 
 </body>
 </html>
