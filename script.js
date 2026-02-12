@@ -1,28 +1,40 @@
 // Ensure the script runs after the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- 1. Index Page: Secure Upload Simulation ---
+    // --- 1. Index Page: Secure File Selection & Encryption Simulation ---
     const uploadBtn = document.getElementById('uploadBtn');
     const uploadStatus = document.getElementById('uploadStatus');
+    const fileInput = document.getElementById('fileInput');
 
-    if (uploadBtn) {
-        uploadBtn.addEventListener('click', () => {
-            // Step 1: Initialize
-            uploadStatus.innerText = "🔒 Initializing patent-protected encryption...";
-            uploadStatus.style.color = "#2b12be";
+    if (uploadBtn && fileInput) {
+    
+        // Trigger the hidden file input when the styled button is clicked
+    uploadBtn.addEventListener('click', () => {
+        fileInput.click();
+    });
 
-            // Step 2: Encrypting (1 second later)
-            setTimeout(() => {
-                uploadStatus.innerText = "⏳ Processing data with AES-256 standards...";
-            }, 1500);
+    // Handle the file selection event for multiple files
+    fileInput.addEventListener('change', () => {
+    const fileCount = fileInput.files.length; // Get the number of files selected
 
-            // Step 3: Success (3 seconds later)
-            setTimeout(() => {
-                uploadStatus.innerText = "✅ Report securely uploaded and encrypted (21 CFR Part 11 Compliant).";
-                uploadStatus.style.color = "#228B22"; // Forest Green
-            }, 3500);
-        });
+    if (fileCount > 0) {
+        // Step 1: Show the number of files being processed
+        uploadStatus.innerText = `🔒 ${fileCount} files selected. Initializing multi-layer patent protection...`;
+        uploadStatus.style.color = "#2b12be";
+
+        // Step 2: Encrypting (simulating batch processing)
+        setTimeout(() => {
+            uploadStatus.innerText = `⏳ Batch encrypting ${fileCount} files with AES-256 standards...`;
+        }, 1500);
+
+        // Step 3: Success
+        setTimeout(() => {
+            uploadStatus.innerText = `✅ All ${fileCount} reports securely uploaded (21 CFR Part 11 Compliant).`;
+            uploadStatus.style.color = "#228B22"; 
+        }, 3500);
     }
+});
+}
 
     // --- 2. Contact Page: Form Submission Handling ---
     const contactForm = document.getElementById('contactForm');
