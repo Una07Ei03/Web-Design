@@ -23,29 +23,26 @@
         </nav>
     </header>
 
-    <main style="padding: 100px 10%; min-height: 80vh;">
+    <main class="contact-container">
         <h2>Contact Us</h2>
         <p>For patent licensing inquiries or technical support, please fill out the form below.</p>
+    
+        <form id="contactForm" class="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Full Name" required>
         
-        <form style="display: flex; flex-direction: column; max-width: 500px; gap: 15px; margin-top: 20px;">
-            <label>Name:</label>
-            <input type="text" name="name" placeholder="Your Name" required>
-            
-            <label>Email:</label>
-            <input type="email" name="email" placeholder="Your Email" required>
-            
-            <label>Subject:</label>
-            <select name="subject">
-                <option value="general">General Inquiry</option>
-                <option value="patent">Patent Licensing</option>
-                <option value="support">Technical Support</option>
-            </select>
-            
-            <label>Message:</label>
-            <textarea name="message" rows="5" placeholder="How can we help?"></textarea>
-            
-            <button type="submit" style="padding: 10px; background: #070225; color: white; cursor: pointer;">Send Message</button>
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="example@clinknote.com" required>
+        
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g., +353 912 345 678">
+
+            <button type="submit" class="submit-btn">Send Message</button>
         </form>
+
+        <p style="font-size: 12px; color: gray; margin-top: 10px;">
+            * Your inquiry is protected by end-to-end encryption to ensure IP confidentiality.
+        </p>
     </main>
 
     <footer>
