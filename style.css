@@ -290,26 +290,36 @@ footer a {
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* Contact Page Styles */
+/* Contact Page Container - Ensures everything is centered */
 .contact-container {
-    padding: 120px 10%;
+    padding-top: 120px;       /* Spacing for fixed header */
+    padding-bottom: 80px;
     min-height: 80vh;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column;   /* Stack H2, P, and Form vertically */
+    align-items: center;      /* Centers items horizontally */
+    justify-content: flex-start; 
     background-color: var(--bg-light);
+    width: 100%;              /* Ensure it takes full width */
+    box-sizing: border-box;
 }
 
+/* Form Specific Styling */
 .contact-form {
     display: flex;
     flex-direction: column;
-    max-width: 500px;
-    width: 100%;
+    width: 90%;               /* Responsive width for mobile */
+    max-width: 500px;         /* Prevents form from getting too wide on PC */
     gap: 15px;
     background: white;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* shadow */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    
+    /* Crucial Fix: ensure no weird margins are pushing it to the right */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
 }
 
 .submit-btn {
