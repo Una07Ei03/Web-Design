@@ -11,21 +11,27 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-    
     <header>
         <div class="logo-title">
             <img src="./images/Logo.jpeg" alt="ClinkNote Logo">
-            <h1 class="logo-title">ClinkNote</h1>
+            <h1 class="brand-name">ClinkNote</h1>
         </div>
-            <nav>
-                <ul class="menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="security.html">Security & Privacy</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
+
+        <button class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav id="nav-menu">
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="security.html">Security & Privacy</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
@@ -36,61 +42,56 @@
             
             <div class="upload-container">
                 <button id="uploadBtn" class="cta-button">Upload Medical Report</button>
-                <p id="uploadStatus" style="margin-top: 10px; font-weight: bold; color: var(--primary-color);"></p>
+                <p id="uploadStatus" class="status-msg"></p>
     
                 <input type="file" id="fileInput" hidden multiple accept=".pdf, .jpg, .jpeg, .png">
                 <p class="security-note">SECURE: AES-256 Encrypted | 21 CFR Part 11 Compliant</p>
             </div>
         </section>
 
-
         <section class="features">
             <h2>Our Core Technologies</h2>
-            <div class="feature-item">
-                <h3>Secure Encryption</h3>
-                <p>Your medical notes are stored with AES-256 encryption, ensuring maximum security and privacy.</p>
-            </div>
-            <div class="feature-item">
-                <h3>Patent Protected</h3>
-                <p>Our innovative technology is protected under patent law, ensuring your data's integrity.</p>
+            <div class="feature-grid"> <div class="feature-item">
+                    <h3>Secure Encryption</h3>
+                    <p>Your medical notes are stored with AES-256 encryption, ensuring maximum security and privacy.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Patent Protected</h3>
+                    <p>Our innovative technology is protected under patent law, ensuring your data's integrity.</p>
+                </div>
             </div>
         </section>
 
         <section class="pricing">
             <h2>Service Plans</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Features</th>
-                        <th>Standard (Free)</th>
-                        <th>Professional (Subscription)</th>
-                        <th>Enterprise (Patent Licensing)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>AI OCR Extraction</td>
-                        <td>Basic (2GB/month)</td>
-                        <td>Classic (10GB/month)</td>
-                        <td>Custom Volume</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section class="resources">
-            <h2>Global Standards</h2>
-            <p>Learn more about security at <a href="https://www.iso.org" target="_blank">ISO Official Website</a>.</p>
+            <div class="table-container"> <table>
+                    <thead>
+                        <tr>
+                            <th>Features</th>
+                            <th>Standard (Free)</th>
+                            <th>Professional</th>
+                            <th>Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AI OCR Extraction</td>
+                            <td>Basic (2GB/month)</td>
+                            <td>Classic (10GB/month)</td>
+                            <td>Custom Volume</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
 
     <footer>
         <div class="footer-content">
             <p>&copy; 2026 ClinkNote Inc. All Rights Reserved.</p>
-            <p>Contact Support: <a href="mailto:contact@clinknote.com">contact@clinknote.com</a></p>
+            <p>Support: <a href="mailto:contact@clinknote.com">contact@clinknote.com</a></p>
         </div>
     </footer>
-
 </body>
 </html>
 
