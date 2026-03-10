@@ -72,6 +72,26 @@ header h1 {
   -webkit-text-fill-color: transparent;
 }
 
+/* Hamburger Menu Button - Hidden by default on Desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  background: none;
+  border: none;
+  gap: 5px;
+  padding: 10px;
+  z-index: 1100;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--primary-color);
+  transition: 0.3s;
+}
+
 nav ul.menu {
   list-style: none;
   display: flex;
