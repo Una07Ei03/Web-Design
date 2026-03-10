@@ -1,61 +1,66 @@
-// Ensure the script runs after the DOM is fully loaded
+/**
+ * ClinkNote Project - Main Script
+ * Handles responsive navigation, secure file upload simulation, and contact form submission.
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- 1. Index Page: Secure File Selection & Encryption Simulation ---
+    /* --- 1. NAVIGATION: HAMBURGER MENU LOGIC --- */
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.querySelector('.menu');
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            // Toggle the visibility of the mobile menu
+            navMenu.classList.toggle('active');
+        });
+    }
+
+    /* --- 2. INDEX PAGE: SECURE FILE SELECTION --- */
     const uploadBtn = document.getElementById('uploadBtn');
     const uploadStatus = document.getElementById('uploadStatus');
     const fileInput = document.getElementById('fileInput');
 
     if (uploadBtn && fileInput) {
-    
-        // Trigger the hidden file input when the styled button is clicked
-    uploadBtn.addEventListener('click', () => {
-        fileInput.click();
-    });
+        uploadBtn.addEventListener('click', () => {
+            fileInput.click();
+        });
 
-    // Handle the file selection event for multiple files
-    fileInput.addEventListener('change', () => {
-    const fileCount = fileInput.files.length; // Get the number of files selected
+        fileInput.addEventListener('change', () => {
+            const fileCount = fileInput.files.length;
+            if (fileCount > 0) {
+                // Emoji icons provide visual feedback for the user
+                uploadStatus.innerText = `🔒 ${fileCount} files selected. Initializing protection...`;
+                
+                setTimeout(() => {
+                    uploadStatus.innerText = `⏳ Batch encrypting ${fileCount} files (AES-256)...`;
+                }, 1500);
 
-    if (fileCount > 0) {
-        // Step 1: Show the number of files being processed
-        uploadStatus.innerText = `🔒 ${fileCount} files selected. Initializing multi-layer patent protection...`;
-        uploadStatus.style.color = "#2b12be";
-
-        // Step 2: Encrypting (simulating batch processing)
-        setTimeout(() => {
-            uploadStatus.innerText = `⏳ Batch encrypting ${fileCount} files with AES-256 standards...`;
-        }, 1500);
-
-        // Step 3: Success
-        setTimeout(() => {
-            uploadStatus.innerText = `✅ All ${fileCount} reports securely uploaded (21 CFR Part 11 Compliant).`;
-            uploadStatus.style.color = "#228B22"; 
-        }, 3500);
+                setTimeout(() => {
+                    uploadStatus.innerText = `✅ Success: ${fileCount} reports securely uploaded.`;
+                    uploadStatus.classList.add('success-text'); 
+                }, 3500);
+            }
+        });
     }
-});
-}
 
-    // --- 2. Contact Page: Form Submission Handling ---
+    /* --- 3. CONTACT PAGE: FORM SUBMISSION --- */
     const contactForm = document.getElementById('contactForm');
 
     if (contactForm) {
         contactForm.addEventListener('submit', (event) => {
-            // Prevent the actual page reload
             event.preventDefault();
-
-            // Simulate the secure sending process
             const submitBtn = contactForm.querySelector('.submit-btn');
-            const originalBtnText = submitBtn.innerText;
             
             submitBtn.disabled = true;
             submitBtn.innerText = "Encrypting & Sending...";
 
             setTimeout(() => {
-                alert("Thank you for your inquiry. Your message has been encrypted and sent to the ClinkNote Licensing Team.");
+                // Standard browser alert for confirmation
+                alert("Message sent securely to the ClinkNote Licensing Team.");
                 submitBtn.disabled = false;
-                submitBtn.innerText = originalBtnText;
-                contactForm.reset(); // Clear the form fields
+                submitBtn.innerText = "Send Message";
+                contactForm.reset();
             }, 2000);
         });
     }

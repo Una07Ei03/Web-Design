@@ -5,13 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | ClinkNote</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
         <div class="logo-title">
             <img src="./images/Logo.jpeg" alt="ClinkNote Logo">
-            <h1 class="logo-title">ClinkNote</h1>
+            <h1 class="brand-name">ClinkNote</h1>
         </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
         <nav>
             <ul class="menu">
                 <li><a href="index.html">Home</a></li>
@@ -40,7 +48,7 @@
             <button type="submit" class="submit-btn">Send Message</button>
         </form>
 
-        <p style="font-size: 12px; color: gray; margin-top: 10px;">
+        <p class="privacy-disclaimer">
             * Your inquiry is protected by end-to-end encryption to ensure IP confidentiality.
         </p>
     </main>

@@ -5,18 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services & Subscription | ClinkNote</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
         <div class="logo-title">
             <img src="./images/Logo.jpeg" alt="ClinkNote Logo">
-            <h1 class="logo-title">ClinkNote</h1>
+            <h1 class="brand-name">ClinkNote</h1>
         </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
         <nav>
             <ul class="menu">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="security.html">Security & Privacy</a></li>
+                <li><a href="security.html">Security</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -31,42 +39,44 @@
 
         <section class="pricing">
             <h3>Choose Your Plan</h3>
-            <table id="pricingTable">
-                <thead>
-                    <tr>
-                        <th>Features</th>
-                        <th>Standard (Free)</th>
-                        <th>Professional (Subscription - 19.9 USD)</th>
-                        <th>Enterprise (Patent Licensing)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>AI OCR Extraction</td>
-                        <td>Basic (2GB/month)</td>
-                        <td>Classic (10GB/month)</td>
-                        <td>Custom Volume</td>
-                    </tr>
-                    <tr>
-                        <td>AES-256 Encryption</td>
-                        <td>✅</td>
-                        <td>✅</td>
-                        <td>✅</td>
-                    </tr>
-                    <tr>
-                        <td>RAG AI Analysis</td>
-                        <td>❌</td>
-                        <td>✅</td>
-                        <td>✅</td>
-                    </tr>
-                    <tr>
-                        <td>Cross-Border Portability</td>
-                        <td>❌</td>
-                        <td>✅</td>
-                        <td>✅</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="pricing-table-container">
+                <table id="pricingTable">
+                    <thead>
+                        <tr>
+                            <th>Features</th>
+                            <th>Standard (Free)</th>
+                            <th>Professional (Subscription - 19.9 USD)</th>
+                            <th>Enterprise (Patent Licensing)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>AI OCR Extraction</td>
+                            <td>Basic (2GB/month)</td>
+                            <td>Classic (10GB/month)</td>
+                            <td>Custom Volume</td>
+                        </tr>
+                        <tr>
+                            <td>AES-256 Encryption</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>RAG AI Analysis</td>
+                            <td>❌</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                        <tr>
+                            <td>Cross-Border Portability</td>
+                            <td>❌</td>
+                            <td>✅</td>
+                            <td>✅</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
     </main>
 
